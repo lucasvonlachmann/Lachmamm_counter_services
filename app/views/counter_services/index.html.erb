@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Counter Services</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Counter service type</th>
+      <th>User</th>
+      <th>Counter document</th>
+      <th>Counter schedule</th>
+      <th>Service status</th>
+      <th>User description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @counter_services.each do |counter_service| %>
+      <tr>
+        <td><%= counter_service.counter_service_type.name %></td>
+        <td><%= counter_service.user.email %></td>
+        <td><%= counter_service.counter_document.number %></td>
+        <td><%= counter_service.counter_schedule.hour %></td>
+        <td><%= counter_service.service_status.name %></td>
+        <td><%= counter_service.user_description %></td>
+        <td><%= link_to 'Show', counter_service %></td>
+        <td><%= link_to 'Edit', edit_counter_service_path(counter_service) %></td>
+        <td><%= link_to 'Destroy', counter_service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Counter Service', new_counter_service_path %>

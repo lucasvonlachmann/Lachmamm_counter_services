@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_07_005714) do
+ActiveRecord::Schema.define(version: 2019_05_07_011858) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,22 @@ ActiveRecord::Schema.define(version: 2019_05_07_005714) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "counter_services", force: :cascade do |t|
+    t.bigint "counter_service_type_id"
+    t.bigint "user_id"
+    t.bigint "counter_document_id"
+    t.bigint "counter_schedule_id"
+    t.bigint "service_status_id"
+    t.text "user_description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["counter_document_id"], name: "index_counter_services_on_counter_document_id"
+    t.index ["counter_schedule_id"], name: "index_counter_services_on_counter_schedule_id"
+    t.index ["counter_service_type_id"], name: "index_counter_services_on_counter_service_type_id"
+    t.index ["service_status_id"], name: "index_counter_services_on_service_status_id"
+    t.index ["user_id"], name: "index_counter_services_on_user_id"
+  end
+
   create_table "service_statuses", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -79,4 +95,9 @@ ActiveRecord::Schema.define(version: 2019_05_07_005714) do
   add_foreign_key "counter_documents", "carrier_clients"
   add_foreign_key "counter_documents", "carriers"
   add_foreign_key "counter_schedules", "branches"
+  add_foreign_key "counter_services", "counter_documents"
+  add_foreign_key "counter_services", "counter_schedules"
+  add_foreign_key "counter_services", "counter_service_types"
+  add_foreign_key "counter_services", "service_statuses"
+  add_foreign_key "counter_services", "users"
 end

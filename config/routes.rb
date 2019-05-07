@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :counter_services
   resources :counter_documents
   resources :counter_schedules
   resources :service_statuses

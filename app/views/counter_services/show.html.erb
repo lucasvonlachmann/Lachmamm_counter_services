@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Counter service type:</strong>
+  <%= @counter_service.counter_service_type.name %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @counter_service.user.email %>
+</p>
+
+<p>
+  <strong>Counter document:</strong>
+  <%= @counter_service.counter_document.number %>
+</p>
+
+<p>
+  <strong>Counter schedule:</strong>
+  <%= @counter_service.counter_schedule.hour %>
+</p>
+
+<p>
+  <strong>Service status:</strong>
+  <%= @counter_service.service_status.name %>
+</p>
+
+<p>
+  <strong>User description:</strong>
+  <%= @counter_service.user_description %>
+</p>
+
+<%= link_to 'Edit', edit_counter_service_path(@counter_service) %> |
+<%= link_to 'Back', counter_services_path %>
