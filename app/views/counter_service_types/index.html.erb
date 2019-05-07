@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Counter Service Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @counter_service_types.each do |counter_service_type| %>
+      <tr>
+        <td><%= counter_service_type.name %></td>
+        <td><%= link_to 'Show', counter_service_type %></td>
+        <td><%= link_to 'Edit', edit_counter_service_type_path(counter_service_type) %></td>
+        <td><%= link_to 'Destroy', counter_service_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Counter Service Type', new_counter_service_type_path %>

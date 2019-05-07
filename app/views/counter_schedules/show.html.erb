@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @counter_schedule.date.strftime("%d/%m/%Y") %>
+</p>
+
+<p>
+  <strong>Hour:</strong>
+  <%= @counter_schedule.hour.strftime("%H:%M")  %>
+</p>
+
+<p>
+  <strong>Branch:</strong>
+  <%= @counter_schedule.branch.name %>
+</p>
+
+<%= link_to 'Edit', edit_counter_schedule_path(@counter_schedule) %> |
+<%= link_to 'Back', counter_schedules_path %>

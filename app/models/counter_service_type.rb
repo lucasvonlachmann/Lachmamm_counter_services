@@ -1,0 +1,2 @@
+class CounterServiceType < ApplicationRecord
+end

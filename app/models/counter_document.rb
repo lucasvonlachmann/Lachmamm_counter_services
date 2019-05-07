@@ -1,0 +1,3 @@
+class CounterDocument < ApplicationRecord
+
+end
