@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @counter_document.number %>
+</p>
+
+<p>
+  <strong>Carrier:</strong>
+  <%= @counter_document.carrier.name %>
+</p>
+
+<p>
+  <strong>Carrier client:</strong>
+  <%= @counter_document.carrier_client.name %>
+</p>
+
+<%= link_to 'Edit', edit_counter_document_path(@counter_document) %> |
+<%= link_to 'Back', counter_documents_path %>
