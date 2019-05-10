@@ -15,6 +15,7 @@ class CounterServicesController < ApplicationController
   # GET /counter_services/new
   def new
     @counter_service = CounterService.new
+    @counter_document = CounterDocument.new
   end
 
   # GET /counter_services/1/edit

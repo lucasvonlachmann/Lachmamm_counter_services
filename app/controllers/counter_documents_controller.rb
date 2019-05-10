@@ -29,10 +29,10 @@ class CounterDocumentsController < ApplicationController
     respond_to do |format|
       if @counter_document.save
         format.html { redirect_to @counter_document, notice: 'Counter document was successfully created.' }
-        format.json { render :show, status: :created, location: @counter_document }
+        format.json
       else
         format.html { render :new }
-        format.json { render json: @counter_document.errors, status: :unprocessable_entity }
+        format.json
       end
     end
   end

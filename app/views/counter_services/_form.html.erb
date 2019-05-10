@@ -4,7 +4,7 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.association :counter_schedule %>
+    <%= f.input :counter_schedule %>
     <%= f.association :counter_service_type %>
     <%= f.association :counter_document %>
     <%= f.input :user_description %>
@@ -14,3 +14,4 @@
     <%= f.button :submit %>
   </div>
 <% end %>
+
